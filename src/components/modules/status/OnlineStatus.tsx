@@ -6,9 +6,11 @@ type Props = {
   onVisibleChange?: (visible: boolean) => void
 }
 
-const apiUrls = (import.meta.env.VITE_API_URLS as string)
+const apiUrls = ((import.meta.env.VITE_API_URLS as string) || "")
   .split(",")
   .map((url: string) => url.trim())
+  .filter(Boolean)
+
 
 export default function OnlineStatus({ onVisibleChange }: Props) {
   const [status, setStatus] = useState<Status>("connecting")
