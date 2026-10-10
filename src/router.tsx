@@ -33,7 +33,6 @@ export default function Router() {
           <Route path="settings" element={<LauncherSettings />} />
         </Route>
 
-        <Route path="/iframe" element={<IframePage />} />
       </Routes>
     </BrowserRouter>
   )
